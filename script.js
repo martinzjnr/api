@@ -1,5 +1,5 @@
 // Initial Data
-let accountBalance = 125750.42;
+let accountBalance = 57935.7;
 const pgkRate = 3.52;
 let transactions = [
     { id: 1, type: 'credit', amount: 5000.00, description: 'Salary Deposit', date: '2025-03-25', time: '09:15 AM' },
