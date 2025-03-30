@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - Exclusive Banking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars" id="menu-toggle"></i>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="profile">
+                    <div class="profile-image-container">
+                        <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                    </div>
+                    <h2 class="profile-name">API TAKAE</h2>
+                    <span class="profile-badge">Premium Client</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" id="nav-dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="cards.html" id="nav-cards"><i class="fas fa-credit-card"></i> Cards</a></li>
+                    <li><a href="transfers.html" id="nav-transfers"><i class="fas fa-exchange-alt"></i> Transfers</a></li>
+                    <li><a href="history.html" class="active" id="nav-history"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="settings.html" id="nav-settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Mobile Profile Header -->
+            <div class="mobile-profile">
+                <div class="profile-image-container">
+                    <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                </div>
+                <h2 class="profile-name">API TAKAE</h2>
+                <span class="profile-badge">Premium Client</span>
+            </div>
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Transaction History</h1>
+                <p>View and filter your account activity</p>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="card filter-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-filter"></i>
+                        <h3>Filter Transactions</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form class="filter-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date-from">From Date</label>
+                                <input type="date" id="date-from">
+                            </div>
+                            <div class="form-group">
+                                <label for="date-to">To Date</label>
+                                <input type="date" id="date-to">
+                            </div>
+                            <div class="form-group">
+                                <label for="transaction-type">Type</label>
+                                <select id="transaction-type" class="form-select">
+                                    <option value="all">All Types</option>
+                                    <option value="credit">Credits</option>
+                                    <option value="debit">Debits</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="amount-min">Min Amount</label>
+                                <input type="number" id="amount-min" placeholder="0.00">
+                            </div>
+                            <div class="form-group">
+                                <label for="amount-max">Max Amount</label>
+                                <input type="number" id="amount-max" placeholder="Any">
+                            </div>
+                        </div>
+                        <div class="filter-actions">
+                            <button type="button" class="reset-filter-btn">Reset</button>
+                            <button type="button" class="apply-filter-btn">Apply Filters</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Transaction History -->
+            <div class="card transaction-history-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-list-alt"></i>
+                        <h3>All Transactions</h3>
+                    </div>
+                    <div class="export-options">
+                        <button class="export-btn">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="transaction-table-container">
+                        <table class="transaction-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2025-03-25</td>
+                                    <td>Salary Deposit</td>
+                                    <td><span class="badge credit-badge">Credit</span></td>
+                                    <td class="amount credit-amount">+$5,000.00</td>
+                                    <td>$125,750.42</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-03-22</td>
+                                    <td>Rent Payment</td>
+                                    <td><span class="badge debit-badge">Debit</span></td>
+                                    <td class="amount debit-amount">-$1,250.00</td>
+                                    <td>$120,750.42</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-03-20</td>
+                                    <td>Consulting Fee</td>
+                                    <td><span class="badge credit-badge">Credit</span></td>
+                                    <td class="amount credit-amount">+$750.00</td>
+                                    <td>$122,000.42</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-03-18</td>
+                                    <td>Grocery Shopping</td>
+                                    <td><span class="badge debit-badge">Debit</span></td>
+                                    <td class="amount debit-amount">-$320.00</td>
+                                    <td>$121,250.42</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-03-15</td>
+                                    <td>Subscription</td>
+                                    <td><span class="badge debit-badge">Debit</span></td>
+                                    <td class="amount debit-amount">-$89.99</td>
+                                    <td>$121,570.42</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-03-10</td>
+                                    <td>Investment Dividend</td>
+                                    <td><span class="badge credit-badge">Credit</span></td>
+                                    <td class="amount credit-amount">+$1,200.00</td>
+                                    <td>$121,660.41</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-03-08</td>
+                                    <td>Restaurant Dinner</td>
+                                    <td><span class="badge debit-badge">Debit</span></td>
+                                    <td class="amount debit-amount">-$175.50</td>
+                                    <td>$120,460.41</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-03-05</td>
+                                    <td>Utility Bill</td>
+                                    <td><span class="badge debit-badge">Debit</span></td>
+                                    <td class="amount debit-amount">-$145.30</td>
+                                    <td>$120,635.91</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-03-01</td>
+                                    <td>Freelance Payment</td>
+                                    <td><span class="badge credit-badge">Credit</span></td>
+                                    <td class="amount credit-amount">+$2,500.00</td>
+                                    <td>$120,781.21</td>
+                                </tr>
+                                <tr>
+                                    <td>2025-02-28</td>
+                                    <td>Car Insurance</td>
+                                    <td><span class="badge debit-badge">Debit</span></td>
+                                    <td class="amount debit-amount">-$210.00</td>
+                                    <td>$118,281.21</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="pagination">
+                        <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">4</button>
+                        <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="history.js"></script>
+</body>
+</html>

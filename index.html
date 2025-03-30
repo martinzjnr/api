@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Banking Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars" id="menu-toggle"></i>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="profile">
+                    <div class="profile-image-container">
+                        <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                    </div>
+                    <h2 class="profile-name">API TAKAE</h2>
+                    <span class="profile-badge">Premium Client</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" class="active" id="nav-dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="cards.html" id="nav-cards"><i class="fas fa-credit-card"></i> Cards</a></li>
+                    <li><a href="transfers.html" id="nav-transfers"><i class="fas fa-exchange-alt"></i> Transfers</a></li>
+                    <li><a href="history.html" id="nav-history"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="settings.html" id="nav-settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-content">
+            <!-- Mobile Profile Header -->
+            <div class="mobile-profile">
+                <div class="profile-image-container">
+                    <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                </div>
+                <h2 class="profile-name">API TAKAE</h2>
+                <span class="profile-badge">Premium Client</span>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div id="dashboard-page" class="page active-page">
+                <!-- Balance Cards -->
+                <div class="balance-cards">
+                    <div class="card balance-card usd-card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <i class="fas fa-dollar-sign"></i>
+                                <h3>USD Balance</h3>
+                            </div>
+                            <p class="card-subtitle">United States Dollar</p>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="balance" id="usd-balance">$125,750.42</h2>
+                            <p class="balance-info">Available for withdrawal</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="refresh-btn">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                            <span class="last-updated">Last updated: Just now</span>
+                        </div>
+                    </div>
+
+                    <div class="card balance-card pgk-card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <i class="fas fa-dollar-sign"></i>
+                                <h3>PGK Balance</h3>
+                            </div>
+                            <p class="card-subtitle">Papua New Guinea Kina</p>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="balance" id="pgk-balance">K442,641.48</h2>
+                            <p class="balance-info">Conversion rate: 1 USD = 3.52 PGK</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="refresh-btn">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                            <span class="last-updated">Last updated: Just now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="action-btn debit-btn" id="debit-btn">
+                        <i class="fas fa-arrow-up"></i> Debit
+                    </button>
+                    <button class="action-btn credit-btn" id="credit-btn">
+                        <i class="fas fa-arrow-down"></i> Credit
+                    </button>
+                </div>
+
+                <!-- Transaction History -->
+                <div class="card transaction-card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <i class="fas fa-history"></i>
+                            <h3>Recent Transactions</h3>
+                        </div>
+                        <p class="card-subtitle">Your transaction history for the past 30 days</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="transaction-tabs">
+                            <button class="tab-btn active" data-tab="all">All</button>
+                            <button class="tab-btn" data-tab="credits">Credits</button>
+                            <button class="tab-btn" data-tab="debits">Debits</button>
+                        </div>
+                        <div class="transaction-list" id="transaction-list">
+                            <!-- Transactions will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for Debit -->
+    <div class="modal" id="debit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Withdraw Funds</h3>
+                <span class="close-modal" id="close-debit-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Enter the amount you wish to withdraw from your account.</p>
+                <div class="form-group">
+                    <label for="debit-amount">Amount (USD)</label>
+                    <input type="number" id="debit-amount" placeholder="0.00" step="0.01" min="0">
+                </div>
+                <p class="available-balance">Available balance: <span id="available-balance">$125,750.42</span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancel-debit">Cancel</button>
+                <button class="confirm-btn debit-confirm" id="confirm-debit">Withdraw</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Credit -->
+    <div class="modal" id="credit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Deposit Funds</h3>
+                <span class="close-modal" id="close-credit-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Enter the amount you wish to deposit to your account.</p>
+                <div class="form-group">
+                    <label for="credit-amount">Amount (USD)</label>
+                    <input type="number" id="credit-amount" placeholder="0.00" step="0.01" min="0">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancel-credit">Cancel</button>
+                <button class="confirm-btn credit-confirm" id="confirm-credit">Deposit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

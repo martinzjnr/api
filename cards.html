@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards - Exclusive Banking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars" id="menu-toggle"></i>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="profile">
+                    <div class="profile-image-container">
+                        <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                    </div>
+                    <h2 class="profile-name">API TAKAE</h2>
+                    <span class="profile-badge">Premium Client</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" id="nav-dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="cards.html" class="active" id="nav-cards"><i class="fas fa-credit-card"></i> Cards</a></li>
+                    <li><a href="transfers.html" id="nav-transfers"><i class="fas fa-exchange-alt"></i> Transfers</a></li>
+                    <li><a href="history.html" id="nav-history"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="settings.html" id="nav-settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Mobile Profile Header -->
+            <div class="mobile-profile">
+                <div class="profile-image-container">
+                    <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                </div>
+                <h2 class="profile-name">API TAKAE</h2>
+                <span class="profile-badge">Premium Client</span>
+            </div>
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Your Cards</h1>
+                <p>Manage your debit and credit cards</p>
+            </div>
+
+            <!-- Cards Section -->
+            <div class="cards-container">
+                <!-- ATM Card -->
+                <div class="atm-card-container">
+                    <div class="atm-card">
+                        <div class="atm-card-front">
+                            <div class="atm-card-header">
+                                <div class="bank-logo">ROYAL BANK</div>
+                                <div class="card-chip">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                            </div>
+                            <div class="card-number">
+                                <span>4921</span>
+                                <span>8156</span>
+                                <span>7349</span>
+                                <span>2085</span>
+                            </div>
+                            <div class="card-details">
+                                <div class="card-holder">
+                                    <div class="label">CARD HOLDER</div>
+                                    <div class="value">API TAKAE</div>
+                                </div>
+                                <div class="card-expires">
+                                    <div class="label">EXPIRES</div>
+                                    <div class="value">09/28</div>
+                                </div>
+                            </div>
+                            <div class="card-type">
+                                <div class="contactless">
+                                    <i class="fas fa-wifi"></i>
+                                </div>
+                                <div class="card-logo">VISA</div>
+                            </div>
+                        </div>
+                        <div class="atm-card-back">
+                            <div class="magnetic-strip"></div>
+                            <div class="signature-panel">
+                                <div class="signature">API TAKAE</div>
+                                <div class="cvv">
+                                    <span>CVV</span>
+                                    <span class="cvv-number">921</span>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <p>This card is property of Royal Bank. If found, please return to any Royal Bank branch.</p>
+                                <p>Card is subject to terms and conditions of the issuing bank.</p>
+                            </div>
+                            <div class="card-type-back">
+                                <div class="card-logo">VISA</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="flip-card-btn">
+                        <i class="fas fa-sync-alt"></i> Flip Card
+                    </button>
+                </div>
+
+                <!-- Card Details -->
+                <div class="card card-details-panel">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <i class="fas fa-credit-card"></i>
+                            <h3>Platinum Debit Card</h3>
+                        </div>
+                        <p class="card-subtitle">Primary Account Card</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-info-item">
+                            <div class="info-label">Status</div>
+                            <div class="info-value"><span class="status-active">Active</span></div>
+                        </div>
+                        <div class="card-info-item">
+                            <div class="info-label">Daily Limit</div>
+                            <div class="info-value">$10,000.00</div>
+                        </div>
+                        <div class="card-info-item">
+                            <div class="info-label">Online Purchases</div>
+                            <div class="info-value">Enabled</div>
+                        </div>
+                        <div class="card-info-item">
+                            <div class="info-label">Contactless Payments</div>
+                            <div class="info-value">Enabled</div>
+                        </div>
+                        <div class="card-info-item">
+                            <div class="info-label">International Usage</div>
+                            <div class="info-value">Enabled</div>
+                        </div>
+                        <div class="card-info-item">
+                            <div class="info-label">Expiry Date</div>
+                            <div class="info-value">09/2028</div>
+                        </div>
+                    </div>
+                    <div class="card-footer card-actions">
+                        <button class="card-action-btn freeze-btn">
+                            <i class="fas fa-snowflake"></i> Freeze Card
+                        </button>
+                        <button class="card-action-btn replace-btn">
+                            <i class="fas fa-sync"></i> Replace Card
+                        </button>
+                        <button class="card-action-btn settings-btn">
+                            <i class="fas fa-cog"></i> Card Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Card Transactions -->
+            <div class="card transaction-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-receipt"></i>
+                        <h3>Recent Card Transactions</h3>
+                    </div>
+                    <p class="card-subtitle">Last 5 transactions made with this card</p>
+                </div>
+                <div class="card-body">
+                    <div class="transaction-list">
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-icon debit-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <h4>Amazon.com</h4>
+                                    <span class="transaction-date">2025-03-27 • 11:23 AM</span>
+                                </div>
+                            </div>
+                            <div class="transaction-amount debit-amount">
+                                -$129.99
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-icon debit-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <h4>Luxury Restaurant</h4>
+                                    <span class="transaction-date">2025-03-25 • 08:45 PM</span>
+                                </div>
+                            </div>
+                            <div class="transaction-amount debit-amount">
+                                -$215.50
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-icon debit-icon">
+                                    <i class="fas fa-gas-pump"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <h4>Shell Gas Station</h4>
+                                    <span class="transaction-date">2025-03-23 • 02:15 PM</span>
+                                </div>
+                            </div>
+                            <div class="transaction-amount debit-amount">
+                                -$65.75
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-icon debit-icon">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <h4>Nordstrom</h4>
+                                    <span class="transaction-date">2025-03-20 • 03:45 PM</span>
+                                </div>
+                            </div>
+                            <div class="transaction-amount debit-amount">
+                                -$349.99
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-icon debit-icon">
+                                    <i class="fas fa-coffee"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <h4>Starbucks</h4>
+                                    <span class="transaction-date">2025-03-19 • 09:30 AM</span>
+                                </div>
+                            </div>
+                            <div class="transaction-amount debit-amount">
+                                -$7.85
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="view-all-btn">
+                        <i class="fas fa-list"></i> View All Transactions
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="cards.js"></script>
+</body>
+</html>

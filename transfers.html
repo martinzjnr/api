@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfers - Exclusive Banking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars" id="menu-toggle"></i>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="profile">
+                    <div class="profile-image-container">
+                        <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                    </div>
+                    <h2 class="profile-name">API TAKAE</h2>
+                    <span class="profile-badge">Premium Client</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" id="nav-dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="cards.html" id="nav-cards"><i class="fas fa-credit-card"></i> Cards</a></li>
+                    <li><a href="transfers.html" class="active" id="nav-transfers"><i class="fas fa-exchange-alt"></i> Transfers</a></li>
+                    <li><a href="history.html" id="nav-history"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="settings.html" id="nav-settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Mobile Profile Header -->
+            <div class="mobile-profile">
+                <div class="profile-image-container">
+                    <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                </div>
+                <h2 class="profile-name">API TAKAE</h2>
+                <span class="profile-badge">Premium Client</span>
+            </div>
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Money Transfers</h1>
+                <p>Send money locally and internationally</p>
+            </div>
+
+            <!-- Transfer Options -->
+            <div class="transfer-options">
+                <div class="card transfer-option">
+                    <div class="transfer-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>To Account</h3>
+                    <p>Transfer to another bank account</p>
+                </div>
+                <div class="card transfer-option">
+                    <div class="transfer-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Transfer</h3>
+                    <p>Send to mobile wallet</p>
+                </div>
+                <div class="card transfer-option">
+                    <div class="transfer-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>International</h3>
+                    <p>Send money abroad</p>
+                </div>
+                <div class="card transfer-option">
+                    <div class="transfer-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Between Accounts</h3>
+                    <p>Transfer between your accounts</p>
+                </div>
+            </div>
+
+            <!-- Transfer Form -->
+            <div class="card transfer-form-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-paper-plane"></i>
+                        <h3>New Transfer</h3>
+                    </div>
+                    <p class="card-subtitle">Send money to another account</p>
+                </div>
+                <div class="card-body">
+                    <form class="transfer-form">
+                        <div class="form-group">
+                            <label for="from-account">From Account</label>
+                            <select id="from-account" class="form-select">
+                                <option value="main">Main Account - $125,750.42</option>
+                                <option value="savings">Savings Account - $45,320.18</option>
+                                <option value="investment">Investment Account - $78,900.00</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="to-account">To Account</label>
+                            <input type="text" id="to-account" placeholder="Account number or select from saved">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name">Recipient Name</label>
+                            <input type="text" id="recipient-name" placeholder="Full name of recipient">
+                        </div>
+                        <div class="form-group">
+                            <label for="bank-name">Bank Name</label>
+                            <input type="text" id="bank-name" placeholder="Recipient's bank">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="transfer-amount">Amount</label>
+                                <input type="number" id="transfer-amount" placeholder="0.00" step="0.01" min="0">
+                            </div>
+                            <div class="form-group half">
+                                <label for="transfer-currency">Currency</label>
+                                <select id="transfer-currency" class="form-select">
+                                    <option value="usd">USD</option>
+                                    <option value="pgk">PGK</option>
+                                    <option value="eur">EUR</option>
+                                    <option value="gbp">GBP</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="transfer-description">Description</label>
+                            <input type="text" id="transfer-description" placeholder="What's this payment for?">
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="save-recipient">
+                            <label for="save-recipient">Save recipient for future transfers</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="confirm-btn credit-confirm">Send Transfer</button>
+                </div>
+            </div>
+
+            <!-- Saved Recipients -->
+            <div class="card saved-recipients-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fas fa-address-book"></i>
+                        <h3>Saved Recipients</h3>
+                    </div>
+                    <p class="card-subtitle">Quick access to your frequent transfers</p>
+                </div>
+                <div class="card-body">
+                    <div class="recipients-list">
+                        <div class="recipient-item">
+                            <div class="recipient-info">
+                                <div class="recipient-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="recipient-details">
+                                    <h4>Sarah Johnson</h4>
+                                    <span class="recipient-account">Bank of America - ****5678</span>
+                                </div>
+                            </div>
+                            <button class="quick-send-btn">Send</button>
+                        </div>
+                        <div class="recipient-item">
+                            <div class="recipient-info">
+                                <div class="recipient-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="recipient-details">
+                                    <h4>Michael Chen</h4>
+                                    <span class="recipient-account">Chase Bank - ****9012</span>
+                                </div>
+                            </div>
+                            <button class="quick-send-btn">Send</button>
+                        </div>
+                        <div class="recipient-item">
+                            <div class="recipient-info">
+                                <div class="recipient-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="recipient-details">
+                                    <h4>Blackwood Investments</h4>
+                                    <span class="recipient-account">Wells Fargo - ****3456</span>
+                                </div>
+                            </div>
+                            <button class="quick-send-btn">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="view-all-btn">
+                        <i class="fas fa-address-book"></i> Manage Recipients
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="transfers.js"></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Exclusive Banking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Mobile Menu Button -->
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars" id="menu-toggle"></i>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="profile">
+                    <div class="profile-image-container">
+                        <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                    </div>
+                    <h2 class="profile-name">API TAKAE</h2>
+                    <span class="profile-badge">Premium Client</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" id="nav-dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="cards.html" id="nav-cards"><i class="fas fa-credit-card"></i> Cards</a></li>
+                    <li><a href="transfers.html" id="nav-transfers"><i class="fas fa-exchange-alt"></i> Transfers</a></li>
+                    <li><a href="history.html" id="nav-history"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="settings.html" class="active" id="nav-settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Mobile Profile Header -->
+            <div class="mobile-profile">
+                <div class="profile-image-container">
+                    <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                </div>
+                <h2 class="profile-name">API TAKAE</h2>
+                <span class="profile-badge">Premium Client</span>
+            </div>
+
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Account Settings</h1>
+                <p>Manage your profile and preferences</p>
+            </div>
+
+            <!-- Settings Tabs -->
+            <div class="settings-container">
+                <div class="settings-tabs">
+                    <button class="settings-tab active" data-tab="profile">
+                        <i class="fas fa-user"></i> Profile
+                    </button>
+                    <button class="settings-tab" data-tab="security">
+                        <i class="fas fa-shield-alt"></i> Security
+                    </button>
+                    <button class="settings-tab" data-tab="notifications">
+                        <i class="fas fa-bell"></i> Notifications
+                    </button>
+                    <button class="settings-tab" data-tab="preferences">
+                        <i class="fas fa-sliders-h"></i> Preferences
+                    </button>
+                </div>
+
+                <div class="settings-content">
+                    <!-- Profile Settings -->
+                    <div class="settings-panel active" id="profile-panel">
+                        <div class="card profile-card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <i class="fas fa-user-circle"></i>
+                                    <h3>Personal Information</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="profile-edit">
+                                    <div class="profile-image-upload">
+                                        <div class="profile-image-container large">
+                                            <img src="api.jpg" alt="API TAKAE" class="profile-image">
+                                            <div class="image-upload-overlay">
+                                                <i class="fas fa-camera"></i>
+                                            </div>
+                                        </div>
+                                        <button class="upload-btn">Change Photo</button>
+                                    </div>
+                                    <div class="profile-form">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="first-name">First Name</label>
+                                                <input type="text" id="first-name" value="API">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="last-name">Last Name</label>
+                                                <input type="text" id="last-name" value="TAKAE">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" id="email" value="evodiahapitakae@gmail.com.pg ">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Phone Number</label>
+                                            <input type="tel" id="phone" value="+675 7191 8171">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="address">Address</label>
+                                            <input type="text" id="address" value="Papua New Guinea">
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="city">City</label>
+                                                <input type="text" id="city" value="Lae">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="state">State</label>
+                                                <input type="text" id="state" value="Port Moresby">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="zip">ZIP Code</label>
+                                                <input type="text" id="zip" value="411">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="cancel-btn">Cancel</button>
+                                <button class="save-btn">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Settings -->
+                    <div class="settings-panel" id="security-panel">
+                        <div class="card security-card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <i class="fas fa-lock"></i>
+                                    <h3>Security Settings</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="security-section">
+                                    <h4>Change Password</h4>
+                                    <div class="form-group">
+                                        <label for="current-password">Current Password</label>
+                                        <input type="password" id="current-password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="new-password">New Password</label>
+                                        <input type="password" id="new-password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirm-password">Confirm New Password</label>
+                                        <input type="password" id="confirm-password">
+                                    </div>
+                                    <button class="update-password-btn">Update Password</button>
+                                </div>
+                                
+                                <div class="security-section">
+                                    <h4>Two-Factor Authentication</h4>
+                                    <div class="toggle-container">
+                                        <span>Enable 2FA</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <p class="security-info">Two-factor authentication adds an extra layer of security to your account.</p>
+                                    <button class="setup-2fa-btn">Configure 2FA</button>
+                                </div>
+                                
+                                <div class="security-section">
+                                    <h4>Login Notifications</h4>
+                                    <div class="toggle-container">
+                                        <span>Email Alerts</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="toggle-container">
+                                        <span>SMS Alerts</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Settings -->
+                    <div class="settings-panel" id="notifications-panel">
+                        <div class="card notifications-card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <i class="fas fa-bell"></i>
+                                    <h3>Notification Preferences</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="notification-section">
+                                    <h4>Transaction Alerts</h4>
+                                    <div class="notification-option">
+                                        <div>
+                                            <h5>All Transactions</h5>
+                                            <p>Get notified for every transaction</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="notification-option">
+                                        <div>
+                                            <h5>Large Transactions</h5>
+                                            <p>Only for transactions over $1,000</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-section">
+                                    <h4>Account Alerts</h4>
+                                    <div class="notification-option">
+                                        <div>
+                                            <h5>Balance Updates</h5>
+                                            <p>Daily balance notifications</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="notification-option">
+                                        <div>
+                                            <h5>Low Balance</h5>
+                                            <p>When balance falls below $5,000</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-section">
+                                    <h4>Delivery Methods</h4>
+                                    <div class="notification-option">
+                                        <div>
+                                            <h5>Email</h5>
+                                            <p>API.TAKAE@example.com</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="notification-option">
+                                        <div>
+                                            <h5>SMS</h5>
+                                            <p>+1 (555) 123-4567</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="notification-option">
+                                        <div>
+                                            <h5>Push Notifications</h5>
+                                            <p>Mobile app notifications</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="save-btn">Save Preferences</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preferences Settings -->
+                    <div class="settings-panel" id="preferences-panel">
+                        <div class="card preferences-card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <i class="fas fa-sliders-h"></i>
+                                    <h3>Account Preferences</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="preference-section">
+                                    <h4>Display Settings</h4>
+                                    <div class="preference-option">
+                                        <div>
+                                            <h5>Default Currency</h5>
+                                            <p>Primary currency for display</p>
+                                        </div>
+                                        <select class="form-select">
+                                            <option value="usd" selected>USD</option>
+                                            <option value="pgk">PGK</option>
+                                            <option value="eur">EUR</option>
+                                            <option value="gbp">GBP</option>
+                                        </select>
+                                    </div>
+                                    <div class="preference-option">
+                                        <div>
+                                            <h5>Date Format</h5>
+                                            <p>How dates are displayed</p>
+                                        </div>
+                                        <select class="form-select">
+                                            <option value="mdy" selected>MM/DD/YYYY</option>
+                                            <option value="dmy">DD/MM/YYYY</option>
+                                            <option value="ymd">YYYY-MM-DD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="preference-section">
+                                    <h4>Privacy</h4>
+                                    <div class="preference-option">
+                                        <div>
+                                            <h5>Activity Tracking</h5>
+                                            <p>Allow tracking for improved service</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="preference-option">
+                                        <div>
+                                            <h5>Marketing Communications</h5>
+                                            <p>Receive promotional offers</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="preference-section">
+                                    <h4>Session Settings</h4>
+                                    <div class="preference-option">
+                                        <div>
+                                            <h5>Auto Logout</h5>
+                                            <p>Automatically log out after inactivity</p>
+                                        </div>
+                                        <select class="form-select">
+                                            <option value="5">5 minutes</option>
+                                            <option value="10" selected>10 minutes</option>
+                                            <option value="15">15 minutes</option>
+                                            <option value="30">30 minutes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="save-btn">Save Preferences</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>
